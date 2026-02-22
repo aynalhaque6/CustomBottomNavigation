@@ -146,9 +146,3 @@ bottomNav.setOnNavigationItemSelectListener(index -> {
 - If you have `N` items, valid indexes are `0 .. N-1`.
 - Use `setNotchIndex(-1)` or `setNotchEnabled(false)` to remove the notch completely.
 - You can change the notch index at runtime (dynamic notch).
-
----
-
-## License
-
-Private / Internal use (adjust as needed).
