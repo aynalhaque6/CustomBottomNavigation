@@ -31,22 +31,30 @@ public class MainActivity extends AppCompatActivity {
 
         CustomBottomNavigation bottomNav = findViewById(R.id.customBottomNav);
 
-// লিস্ট তৈরি করুন
         List<BottomNavItem> items = new ArrayList<>();
         items.add(new BottomNavItem("Home", ContextCompat.getDrawable(this, R.drawable.ic_home)));
         items.add(new BottomNavItem("Rewards", ContextCompat.getDrawable(this, R.drawable.ic_gift)));
-        items.add(new BottomNavItem("Send", ContextCompat.getDrawable(this, R.drawable.ic_send))); // FAB Icon
-        items.add(new BottomNavItem("History", ContextCompat.getDrawable(this, R.drawable.ic_history)));
         items.add(new BottomNavItem("More", ContextCompat.getDrawable(this, R.drawable.ic_grid)));
 
-// ভিউতে সেট করুন
         bottomNav.setItems(items);
 
-// লিসেনার
-        bottomNav.setOnNavigationItemSelectListener(new CustomBottomNavigation.OnNavigationItemSelectListener() {
-            @Override
-            public void onItemSelected(int index) {
-                Toast.makeText(MainActivity.this, "Clicked: " + index, Toast.LENGTH_SHORT).show();
+        bottomNav.setNotchEnabled(true);
+        bottomNav.setNotchIndex(1); // History index
+
+        bottomNav.setOnNavigationItemSelectListener(index -> {
+            switch (index) {
+                case 0:
+                    Toast.makeText(this, "Clicked Home", Toast.LENGTH_SHORT).show();
+                    // Load Home Fragment
+                    break;
+                case 2:
+                    Toast.makeText(this, "Clicked Rewards", Toast.LENGTH_SHORT).show();
+                    // Handle Center FAB Action
+                    break;
+                case 4:
+                    Toast.makeText(this, "Clicked More", Toast.LENGTH_SHORT).show();
+                    // Open Account Activity
+                    break;
             }
         });
     }

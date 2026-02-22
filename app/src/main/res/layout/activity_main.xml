@@ -26,9 +26,8 @@
         app:cbn_fabColor="#1B7D36"
         app:cbn_activeColor="#1B7D36"
         app:cbn_inactiveColor="#757575"
-
         app:cbn_fabSize="56dp"
-        app:cbn_itemTextSize="10sp"
+        app:cbn_itemTextSize="16sp"
         app:cbn_itemIconSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 
